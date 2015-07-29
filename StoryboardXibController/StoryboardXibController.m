@@ -131,9 +131,9 @@
             }
         }
         
-        if (self.segueInfo != nil && [self.containedController conformsToProtocol:@protocol(SegueingInfoViewController) ] )
+        if (self.segueInfo != nil && [self.containedController conformsToProtocol:@protocol(SegueingInfoProtocol) ] )
         {
-            id<SegueingInfoViewController> protocol = (id<SegueingInfoViewController>)self.containedController;
+            id<SegueingInfoProtocol> protocol = (id<SegueingInfoProtocol>)self.containedController;
             if ( [protocol respondsToSelector:@selector(destinationPrepareForSegue:info:) ] )
             {
                 [protocol destinationPrepareForSegue:self.segue info:self.segueInfo];
